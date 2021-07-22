@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.gg
+		{
+			outline: none;
+    		font-size: 1.1em;
+			margin: 4px 0px 18px 1px;
+			color: black;
+			padding: 10px 38px;
+			border: none;
+			border-radius: 2px;
+			width: 68%;
+			font-family: 'Lato', sans-serif;
+		}
+	</style>
+<title>request pick up</title>
+<!-- Meta tag Keywords -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Meta tag Keywords -->
+<!-- css files -->
+<link href="{% static '/css/style.css'%}" rel="stylesheet" type="text/css" media="all">
+<link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet" type="text/css" media="all">
+<!-- //css files -->
+<!-- online-fonts -->
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'><link href='//fonts.googleapis.com/css?family=Raleway+Dots' rel='stylesheet' type='text/css'>
+</head>
+<body style="background-image:url({{MEDIA_URL}}pics/hero.jpg)">
+<!--header-->
+	
+<!--//header-->
+<!--main-->
+<script>
+	{% for msg in messages%}
+	swal("{{msg}}");
+	{% endfor %}
+  </script>
+
+<div class="main-agileits">
+	<h2 class="sub-head" style="background-color: white; color:black"><b>request a pickup</b></h2>
+		<div class="sub-main">	
+			<form action="request" method="POST" style="background-color: rgb(253, 253, 253);">
+				{% csrf_token %}
+				<input placeholder="First Name" name="name" class="name1" type="text" required=""><br>
+				<input placeholder="Phone Number" name="number" class="number" type="text" required=""><br>
+				<input placeholder="Pin code" name="pin" class="mail" type="text" required=""><br>
+				<input  placeholder="Address" name="address" class="add" type="text" required=""><br>
+				<input  placeholder="Description (include approx weight)" name="description" class="desc" type="text" required="">
+				<input  placeholder="area" name="description" class="desc1" type="text" required="">
+				<select name="cars" class="gg" required>
+					<option value="">Select Buyer</option>>
+					<option value="Junkart">Junkart</option>
+					<option value="Crapbin">Crapbin</option>
+					<option value="ScrapQ">ScrapQ</option>
+					<option value="Local">Local</option>
+					</select>
+				
+				<input type="submit" value="confirm">
+			</form>
+		</div>
+		<div class="clear"></div>
+</div>
+<!--//main-->
+
+<!--footer-->
+<!--//footer-->
+
+</body>
+</html>
